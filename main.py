@@ -26,7 +26,8 @@ class HexagonTiler:
         pygame.display.update()
         time.sleep(seconds)
 
-    def draw_pattern(self, surface): # Call this function!
+    def draw_pattern(self, surface, delay): # Call this function!
+        if delay: delay = 0.5
         S = math.sin(math.radians(150)) * self.size
         C = math.cos(math.radians(150)) * self.size
         rS, rC = round(S), round(C)
@@ -34,35 +35,35 @@ class HexagonTiler:
             tlX, tlY = 320-S, 180-C-self.size*1.5
             tlY += 2*layer*C
             self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-            self.delay(0.5)
+            self.delay(delay)
             for i in range(layer):
                 tlX += 3*S
                 tlY -= C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)
+                self.delay(delay)
             for i in range(layer):
                 tlY -= 2*C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)
+                self.delay(delay)
             for i in range(layer):
                 tlX -= 3*S
                 tlY -= C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)                
+                self.delay(delay)                
             for i in range(layer):
                 tlX -= 3*S
                 tlY += C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)                
+                self.delay(delay)                
             for i in range(layer):
                 tlY += 2*C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)                
+                self.delay(delay)                
             for i in range(layer-1):
                 tlX += 3*S
                 tlY += C
                 self.draw_hexagon(surface, self.layer_colors[layer], tlX, tlY, S, C)
-                self.delay(0.5)                
+                self.delay(delay)                
 
 # BLOCK: INSERT CODE BELOW v
 tiler = HexagonTiler(20, [(0, 0, 255), (255, 0, 0), (255, 255, 0), (0, 255, 0)])
@@ -71,7 +72,9 @@ tiler = HexagonTiler(20, [(0, 0, 255), (255, 0, 0), (255, 255, 0), (0, 255, 0)])
 def main():
     run = True
     window.fill((0, 0, 0))
-    tiler.draw_pattern(window)
+    # BLOCK: INSERT CODE BELOW v
+    tiler.draw_pattern(window, False)
+    # BLOCK: INSERT CODE ABOVE ^
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

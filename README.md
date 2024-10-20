@@ -44,7 +44,13 @@ Here is an example, for a center of red, surrounding tiles of yellow, and layer 
 
 ^ This is to be put, within the 'insert code here' code block
 
+`tiler.draw_pattern(window, False)`
+
+^ Make the 2nd argument 'True' for a half-second delay between hexagons, 'False' for no delay
+
 More on the example, replace the *size* and *layer_colors* arguments from the first code snip, with your own desired size and colors.
+
+For the second snip, replace the *False* 'delay' argument with *True* if you want a delay.
 
 You are to, copy the full code within the GitHub repo, then within the 'insert code here',
 blocks, paste in the code you want, based on this documentation here.
