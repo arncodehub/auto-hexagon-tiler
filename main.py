@@ -65,17 +65,17 @@ class HexagonTiler:
                 self.delay(0.5)                
 
 # BLOCK: INSERT CODE BELOW v
-tiler = HexagonTiler(20, [(211, 146, 124), (177, 107, 94), (210, 136, 106), (197, 93, 82)])
+tiler = HexagonTiler(20, [(0, 0, 255), (255, 0, 0), (255, 255, 0), (0, 255, 0)])
 # BLOCK: INSERT CODE ABOVE ^
 
 def main():
     run = True
     window.fill((0, 0, 0))
+    tiler.draw_pattern(window)
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-        tiler.draw_pattern(window)
         pygame.display.update()
         clock.tick(60)
     pygame.quit()
