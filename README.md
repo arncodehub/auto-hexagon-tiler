@@ -42,13 +42,7 @@ Here is an example, for a center of red, surrounding tiles of yellow, and layer 
 
 `tiler = HexagonTiler(20, [(220, 100, 70), (220, 190, 50), (80, 100, 220)])`
 
-^ This is to be put, within the 1st 'insert code here' block
-
-`tiler.draw_pattern(window)`
-
-^ This is to be put, within the 2nd 'insert code here' block
-
-
+^ This is to be put, within the 'insert code here' code block
 
 More on the example, replace the *size* and *layer_colors* arguments from the first code snip, with your own desired size and colors.
 
